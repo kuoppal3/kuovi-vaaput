@@ -1,2 +1,1 @@
-## TODO
-- englanniksi
+## Vaappusivusto tilauskorilla
