@@ -1,0 +1,34 @@
+  <% include header %>
+  <% include navbar %>
+  
+  <div class="container">
+  <div class="col-md-8 bg-own shadow">
+    <div class="panel-heading text-center">
+      <h2>Tilaukset</h2>
+    </div>
+  
+  
+      <div class="row">
+        <ul class="list-group small_line_height">
+            <% for(var i = 0; i < tilaukset.length; ++i) { %>
+                <li  class="list-group-item align_left">
+                  <span class="close">x</span>
+                  <p><%= tilaukset[i].aikaleima %> </p> <br>
+                  <p><%= tilaukset[i].etunimi + " " + tilaukset[i].sukunimi %> </p> <br>
+                  <p><%= tilaukset[i].postinumero + " " + tilaukset[i].paikkakunta %> </p> <br>
+                  <p><%= tilaukset[i].email %> </p> <br>
+                  <% for(var a = 0; a < tilaukset[i].tilaus.length; ++a) { %>
+                      <p><%= tilaukset[i].tilaus[a].type + " (" + tilaukset[i].tilaus[a].count + " kpl)"  %> </p> <br>
+                  <% } %>
+                  <p>Lisätiedot: <%= tilaukset[i].lisatiedot %> </p> <br>
+                  <text class="price_color">Yhteensä: <%= tilaukset[i].yhteensa %> € </text>
+                </li>
+            <% } %>
+         </ul> 
+          
+      </div>
+
+    </div>
+
+  <% include sidebar %>
+  <% include footer %>

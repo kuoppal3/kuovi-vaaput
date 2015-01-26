@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+  <% include header %>
+  <% include navbar %>
+
+    <div class="container text-center">
+     	<div class="col-md-12">
+            <div class="col-md-9 bg-own shadow">
+ 
+                <div class="panel-heading text-center">
+                    <h2>50 mm värikartta</h2>
+                    <p class="align_left">Kaikki vaaput ovat koeuitettuja ja balsarunkoisia. Rungot ovat alusta asti käsin veistettyjä, joten jokainen vaappu on yksilö ja kahden saman mallin uinnit saattavatkin poiketa hiukan toisistaan. Vaappujen postikuluja ei tarvitse maksaa, mutta postituksen helpottamiseksi <strong>vaaput lähetetään ilman koukkuja</strong>. Tilaaminen tapahtuu joko "Lisää tilauskoriin" -painikkeella tai raahamalla ja pudottamalla vaapun kuva oikean reunan tilauskorin ikoniin.
+                    </p>
+                </div>
+    	        
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="thumbnail shadow">
+                            <h4>Violetti kameleontti</h4>
+                            <img src="/kuvat/50mm_violet.png" alt="" width="80%" height="80%" draggable="true" id="violetti">
+                            <p class="price_color align_left">Hinta: 10,00 € kappale</p>
+                            <p class="align_left">Kameleonttimaalilla tyllikuvioitu vaappu keltapunaisella vatsalla ja violetista mustaan taittuvalla hileisellä selällä.</p>
+                            <input type="button" class="btn btn-success" value="Lisää tilauskoriin" ng-click="addOrder('Violetti kameleontti', 10)" onclick="lisaaTilaukseen('50mm_violetti')">		
+                    	</div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="thumbnail shadow">
+                            <h4>Kameleonttikiiski</h4>
+                            <img src="/kuvat/50mm_kiiski.png" alt="" width="80%" height="80%" draggable="true" id="kiiski">
+                            <p class="price_color align_left">Hinta: 10,00 € kappale</p>
+                            <p class="align_left">Tyllikuvioitu vaappu väriä vaihtavalla selällä ja punaisella vatsalla.</p>
+                            <input type="button" class="btn btn-success" value="Lisää tilauskoriin" ng-click="addOrder('Kameleonttikiiski', 10)" onclick="lisaaTilaukseen('50mm_kiiski')">		
+                    	</div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="thumbnail shadow">
+                            <h4>Papukaija</h4>
+                            <img src="/kuvat/50mm_papukaija.png" alt="" width="80%" height="80%" draggable="true" id="papukaija">
+                            <p class="price_color align_left">Hinta: 10,00 € kappale</p>
+                            <p class="align_left">Papukaijavaappu punaisella vatsalla, mustalla päällä ja tummennetulla perällä.</p>
+                            <input type="button" class="btn btn-success" value="Lisää tilauskoriin" ng-click="addOrder('Papukaija', 10)" onclick="lisaaTilaukseen('50mm_papukaija')">	
+                    	</div>
+                    </div>
+    
+                    
+                    <div class="col-md-6">
+                        <div class="thumbnail shadow">
+                            <h4>Tylliahven</h4>
+                            <img src="/kuvat/50mm_vihrea.png" alt="" width="80%" height="80%" draggable="true" id="vihrea">
+                            <p class="price_color align_left">Hinta: 10,00 € kappale</p>
+                            <p class="align_left">Keltaisesta vatsasta vihreästä ruskeaan siirtyvä mustaselkäinen tyllikuvioitu vaappu.</p>
+                            <input type="button" class="btn btn-success" value="Lisää tilauskoriin" ng-click="addOrder('Tylliahven', 10)"  onclick="lisaaTilaukseen('50mm_vihrea')">	
+                    	</div>
+                    </div>
+                </div>
+                    
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="thumbnail shadow">
+                            <h4>Hopeahile</h4>
+                            <img src="/kuvat/50mm_hopeahile.png" alt="" width="80%" height="80%" draggable="true" id="hopeahile">
+                            <p class="price_color align_left">Hinta: 10,00 € kappale</p>
+                            <p class="align_left">Hopeahileinen vaappu ruskealla selällä ja värikkäällä vatsalla.</p>
+                            <input type="button"  class="btn btn-success" value="Lisää tilauskoriin" ng-click="addOrder('Hopeahile', 10)" onclick="lisaaTilaukseen('50mm_hopeahile')">	
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="thumbnail shadow">
+                            <h4>Sinihile</h4>
+                            <img src="/kuvat/50mm_sinihile.png" alt="" width="80%" height="80%" draggable="true" id="sinihile">
+                            <p class="price_color align_left">Hinta: 10,00 € kappale</p>
+                            <p class="align_left">Metallinsininen vaappu pienillä sekä suurilla hopeahileillä.</p>
+                            <input type="button" class="btn btn-success" value="Lisää tilauskoriin"  ng-click="addOrder('Sinihile', 10)" onclick="lisaaTilaukseen('50mm_sinihile')">	
+                    	</div>
+                    </div>
+                </div>
+		    </div>
+  <% include sidebar %>
+  <% include footer %>
+</html>

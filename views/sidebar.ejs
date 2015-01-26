@@ -1,0 +1,26 @@
+
+<div class="col-md-1">
+  <div class="shadow own-width bg-own affix text-center" id="oma-sidebar">
+
+    <div class="panel-heading">
+      <h2>Tilauskori</h2>
+    </div>
+    <img src=/kuvat/shopping_cart_new.png id="ordercart" class="cart"
+    ondrop="drop(event)" ondragover="allowDrop(event)">
+
+    <div class="row">
+
+      <h4>Tilauksesi:</h4>
+      <ul class="list-group">  
+        <li class="list-group-item align_left" ng-repeat="order in orders">
+          <span class="close" ng-click="removeOrder(order)">x</span>
+          <text class="price_color"> {{order.price * order.count}},00 € </text> {{order.type}} {{returnCountStr(order)}}
+        </li>
+      </ul>
+      <h5>Yhteensä: <text class="price_color"> <b>{{total}},00 € </b></text> </h5>
+      <a class="btn btn-default" ng-click="removeAllOrders()" href="#">Tyhjennä</a>
+      <a class="btn btn-success" href="/tilaus">Viimeistele</a>
+    </div>
+
+  </div>
+</div>

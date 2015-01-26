@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+  <% include header %>
+  <% include navbar %>
+    <div class="container text-center">
+	 			<div class="col-md-12">
+		      <div class="col-md-9 bg-own shadow">
+		        <div class="panel-heading text-center">
+		          <h2>Tilattavat tuotteet</h2>
+		          <p class="align_left">Kaikki vaaput ovat koeuitettuja ja balsarunkoisia. Rungot ovat alusta asti käsin veistettyjä, joten jokainen vaappu on yksilö ja kahden saman mallin uinnit saattavatkin poiketa hiukan toisistaan. Vaappujen postikuluja ei tarvitse maksaa, mutta postituksen helpottamiseksi <strong>vaaput lähetetään ilman koukkuja</strong>. Tilaaminen tapahtuu joko "Lisää tilauskoriin" -painikkeella tai raahamalla ja pudottamalla vaapun kuva oikean reunan tilauskorin ikoniin.
+		          </p>
+		        </div>
+		        
+		        <div class="row">
+							<div class="col-md-6">
+								<div class="thumbnail shadow">
+									<h4>Vaappu omalla tekstillä</h4>
+									<img src="/kuvat/your_text_lure.png" alt="" width="100%" height="100%" draggable="true" id="your_text_lure">
+									<p class="price_color align_left">Hinta: 20,00 € kappale</p>
+									<p class="align_left">12 cm vaappu vapaavalintaisella tekstillä. Soveltuu esimerkiksi lahjaksi tai koristeeksi, mutta kalastaa myös hyvin kuhaa ja haukea. Uintisyvyys n. 2m. Suositeltava koukkukoko on 4.</p>
+									<a class="btn btn-primary" href="/vaaput/120mm/3d">3d-malli</a>
+									<input type="button" data-toggle="modal" data-target="#textModal" class="btn btn-success" value="Lisää tilauskoriin" onclick="lisaaTilaukseen('lahjavaappu')">	
+								</div>
+							</div>
+							
+							<!-- Modal for lure to give own text -->
+							<div class="modal fade" id="textModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							  <div class="modal-dialog">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							        <h4 class="modal-title" id="modalLabel">Valitse vaappuun tuleva teksti</h4>
+							      </div>
+							   <form name="modalTekstiForm" class="form-horizontal">
+							      <div class="modal-body">
+								        <div class="form-group">
+									        <label class="control-label col-xs-3">Haluamasi teksti</label>
+									        <div class="col-xs-9">
+									          <input type="omaTeksti" required class="form-control" id="omaTeksti" name="vaappu" ng-model="vaappu" placeholder="Vaapun teksti">
+									        </div>
+								      	</div>
+							      </div>
+							      	
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-default" data-dismiss="modal">Sulje</button>
+							        <button type="submit" class="btn btn-primary" ng-click="addOrder('Vaappu tekstillä', 20)">Lisää vaappu tekstillä tilauskoriin</button>
+							      </div>
+							  	</form>
+							    </div>
+							  </div>
+							</div>
+							
+							<!-- 50mm lure column -->
+							<div class="col-md-6">
+								<div class="thumbnail shadow">
+									<h4>50 mm vaappu</h4>
+									<img src="/kuvat/50mm_papukaija.png" id="50mm_main" alt="" width="80%" height="80%">
+									<p class="price_color align_left">Hinta: 10,00 € kappale</p>
+									<p class="align_left">50 mm runkoinen vaappu, joka kalastaa tehokkaasti ahventa ja haukea. Vaappu on voimakasuintinen ja hakeva. Uintisyvyys n. 0,5m. Suositeltava koukkukoko on 8.</p>
+									<a class="btn btn-primary" data-toggle="modal" data-target="#swimmingModal" href="/vaaput/50mm/uintivideo">Uintivideo</a>
+									<a class="btn btn-success" href="/vaaput/50mm/varikartta">Värikarttaan</a>	
+								</div>
+							</div>
+							
+														
+							<!-- modal for swimming video -->
+							<div class="modal fade" id="swimmingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							  <div class="modal-dialog">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							        <h4 class="modal-title" id="modalLabel">120 mm vaapun uintivideo</h4>
+							        <p class="price_color">(Tällä hetkellä tässä on vain esimerkkivideo)</p>
+							      </div>
+							      <div class="modal-body">
+						          <div class="embed-responsive embed-responsive-4by3">
+				  							<iframe class="embed-responsive-item" src="http://www.youtube.com/embed/6NbAAmDuv_8?feature=player_detailpage"></iframe>
+											</div>
+							      </div>
+							      	
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-default" data-dismiss="modal">Sulje</button>
+							      </div>
+							    </div>
+							  </div>
+							</div>
+		        </div>
+					</div>
+  <% include sidebar %>
+  <% include footer %>
+</html>

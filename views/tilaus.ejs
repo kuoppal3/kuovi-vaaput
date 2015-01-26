@@ -1,0 +1,103 @@
+<% include header %>
+<% include navbar %>
+
+<div class="container">
+  <div class="col-md-8 bg-own shadow">
+    <div class="panel-heading text-center">
+      <h2>Tilauslomake</h2>
+    </div>
+
+    <form role="form" name="tilausForm" class="form-horizontal">
+
+      <div class="form-group">
+        <label class="control-label col-xs-2">Nimi</label>
+        <div class="col-xs-5">
+          <input type="etunimi" class="form-control" id="inputEtunimi" name="etunimi" ng-model="etunimi" required placeholder="Etunimi">
+        </div>
+        
+        <div class="col-xs-5">
+          <input type="sukunimi" class="form-control" id="inputSukunimi" name="sukunimi" ng-model="sukunimi" required placeholder="Sukunimi">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="inputSahkoposti" class="control-label col-xs-2">Sähköposti</label>
+        <div class="col-xs-10">
+          <input type="email" class="form-control" id="inputSahkoposti" name="email" ng-model="email" required placeholder="Sähköposti">
+        </div>
+      </div>
+                  
+      <div class="form-group">
+        <label for="inputPaikkakunta" class="control-label col-xs-2">Paikkakunta</label>
+        <div class="col-xs-5">
+            <input type="paikkakunta" class="form-control" id="inputPaikkakunta" name="paikkakunta" ng-model="paikkakunta" required placeholder="Paikkakunta">
+        </div>
+        <div class="col-xs-5">
+          <input type="postinumero" class="form-control" id="inputPostinumero" name="postinumero" ng-model="postinumero" required placeholder="Postinumero">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="inputPostiosoite" class="control-label col-xs-2">Postiosoite</label>
+        <div class="col-xs-10">
+          <input type="osoite" class="form-control" id="inputOsoite" name="postiosoite" ng-model="postiosoite" required placeholder="Osoite">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="inputLisatiedot" class="control-label col-xs-2">Lisätietoja tilauksesta</label>
+        <div class="col-xs-10">
+          <textarea type="lisatiedot" class="form-control" rows="2" id="inputLisatiedot" name="lisatiedot" ng-model="lisatiedot" placeholder="Toiveita, kysyttävää tai muuta huomioitavaa tilauksestasi"></textarea>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="control-label col-xs-2">Tilauksesi</label>
+        
+        <div class="col-xs-10">
+          <ul class="list-group">  
+            <li class="list-group-item align_left col-md-6" ng-repeat="order in orders">
+              <span class="close" ng-click="removeOrder(order)">x</span>
+              <text class="price_color"> {{order.price * order.count}},00 € </text> {{order.type}} {{returnCountStr(order)}}
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="control-label col-xs-2">Loppusumma</label>
+          <div class="col-xs-10">
+             <p class="price_color form-control-static">{{total}},00 €</p>
+          </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-xs-offset-2 col-xs-10">
+          <button type="submit" class="btn btn-primary" ng-click="finishOrder()">Lähetä tilaus</button>
+          <button type="reset" class="btn btn-default" value="Reset">Tyhjennä kaikki</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+	<!-- Modal for completed order -->
+	<div class="modal fade" id="completedOrderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 class="modal-title" id="modalLabel">Kiitos tilauksestasi!</h3>
+        </div>
+        <div class="modal-body">
+  		      <h5>Tilauskorisi on tyhjennetty ja tilauksesi on lähetetty käsiteltäväksi.</h5>
+        </div>
+        	
+        <div class="modal-footer">
+          <a href="/" class="btn btn-primary">Sulje ja jatka etusivulle</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <%= include sidebar %>
+</div>

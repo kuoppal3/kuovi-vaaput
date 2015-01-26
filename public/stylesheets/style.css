@@ -1,0 +1,90 @@
+body {
+  padding-top: 70px;
+}
+
+
+@media(min-width:992px){
+    .navbar-right {
+        padding-right: 90px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar-right {
+        padding-right: 140px;
+    }
+}
+
+.input-ownsize {
+    height: 150px;   
+}
+
+.shadow {
+    border-radius: 4px;
+    box-shadow: 0 0 10px black;
+    padding:15px 15px 15px 15px;
+}
+
+.cart-animate {
+    -webkit-animation:shake 0.3s ease;
+    -moz-animation:shake 0.3s ease;
+    animation:shake 0.3s ease;
+}
+
+@-moz-keyframes shake {
+    25% { -moz-transform: rotate(10deg); } 
+    50% { -moz-transform: rotate(-10deg); } 
+    75% { -moz-transform: rotate(10deg); } 
+    100% { -moz-transform: rotate(0deg); } 
+}
+@-webkit-keyframes shake {
+    25% { -moz-transform: rotate(10deg); } 
+    50% { -moz-transform: rotate(-10deg); } 
+    75% { -moz-transform: rotate(10deg); } 
+    100% { -moz-transform: rotate(0deg); } 
+}
+@keyframes shake {
+    25% { -moz-transform: rotate(10deg); } 
+    50% { -moz-transform: rotate(-10deg); } 
+    75% { -moz-transform: rotate(10deg); } 
+    100% { -moz-transform: rotate(0deg); } 
+}
+
+.stroke_text
+{
+    color: white;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+}
+
+.small_line_height {
+    line-height: 30%;
+}
+
+.form-control-static {
+ margin-bottom: 0;
+ padding-top: @padding-base-vertical;
+}
+
+.own-width {
+    min-width: 250px;
+} 
+
+.bg-own {
+    background: #e5e5e5;
+}
+
+.price_color {
+    color: #FF0000;
+}
+
+.unavailable_color {
+    color: #989898;
+}
+
+.align_left {
+    text-align: left; 
+}
