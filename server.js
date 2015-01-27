@@ -30,7 +30,7 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
 var mongoose = require("mongoose");
-mongoose.connect(CUSTOMCONNSTR_MONGOLAB_URI + '/data');
+mongoose.connect(process.env.CUSTOMCONNSTR_MONGOLAB_URI + '/data');
 
 var db = mongoose.connection;
 db.once('open', function callback () {
