@@ -43,7 +43,7 @@ function init() {
 
     // Load json luremodel
     var loader = new THREE.JSONLoader();
-    loader.load( '/javascripts/models/120mm_model2.json', function(geometry) {
+    loader.load( '/javascripts/models/120mm_model.js', function(geometry) {
         var texture = THREE.ImageUtils.loadTexture( '/javascripts/models/120mm_texture.jpg' );
         var material = new THREE.MeshBasicMaterial( { map: texture } );
         var mesh = new THREE.Mesh( geometry, material);
