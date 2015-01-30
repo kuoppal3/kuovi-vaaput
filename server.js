@@ -1,5 +1,5 @@
 //
-// Kuovi-vaaput-sivun palvelinpuoli
+// Kuovi-vaaput server
 //
 
 var http = require('http');
@@ -29,14 +29,23 @@ app.use(express.bodyParser());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Middleware for 404
+app.use(function(req, res) {
+  res.status(400);
+  res.render('404');
+});
+
+// Database connection
 var mongoose = require("mongoose");
+// mongoose.connect(process.env.CUSTOMCONNSTR_MONGOLAB_URI + '/data');
 mongoose.connect('mongodb://' + process.env.IP + '/data');
 
 var db = mongoose.connection;
 db.once('open', function callback () {
-  console.log("We have connection");
+  console.log("db connected");
 });
 
+// Routes
 app.get('/', routes.index);
 app.get('/tilaus', tilaus.tilaus);
 app.post('/tilaus', tilaus.lisaaTilaus);

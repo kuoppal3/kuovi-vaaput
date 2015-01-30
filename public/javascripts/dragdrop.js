@@ -10,7 +10,7 @@ function drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text/html");
     
-    // Parse "id"-section from dropped element
+    // Parse "id"-section from the dropped element
     var dragged_id = "";
     for(var i = 0; i < data.length - 2; ++i) {
         // if "id=" is found
@@ -20,7 +20,7 @@ function drop(ev) {
             // Lure's id to dragged_id
             for(i; i < data.length - 2; ++i) 
             {
-                // id end to "-character
+                // id ends to "-character
                 if(data[i] === "\"") {
                     break;
                 }
@@ -29,13 +29,13 @@ function drop(ev) {
         }
     }
     
-    // Lure with own text as a separate because it shows a modal
+    // Lure with own text as a separate because it has to show a modal
     if(dragged_id === "your_text_lure") {
         $('#textModal').modal('show');
         return;
     }
     
-    // Redirect if 50mm main lure is dropped to cart
+    // Redirect, if 50mm main lure is dropped to cart
     if(dragged_id === "50mm_main") {
         window.location.href = "/vaaput/50mm/varikartta";    
     }
