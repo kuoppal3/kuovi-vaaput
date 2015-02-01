@@ -22,8 +22,8 @@ app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
-app.use(express.cookieParser('your secret here'));
-app.use(express.session({secret: 'salateksti1234'}));
+app.use(express.cookieParser('secret'));
+app.use(express.session({secret: 'secrettoken'}));
 app.use(express.bodyParser());
 
 app.use(app.router);
