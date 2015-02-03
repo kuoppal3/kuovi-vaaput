@@ -39,10 +39,10 @@ app.use(function(req, res) {
 var mongoose = require("mongoose");
 
 // Cloud9 local db
-//mongoose.connect('mongodb://' + process.env.IP + '/data');
+mongoose.connect('mongodb://' + process.env.IP + '/data');
 
 // Azure mongolab db
-mongoose.connect(process.env.CUSTOMCONNSTR_MONGOLAB_URI + '/data');
+//mongoose.connect(process.env.CUSTOMCONNSTR_MONGOLAB_URI + '/data');
 
 var db = mongoose.connection;
 db.once('open', function callback () {
