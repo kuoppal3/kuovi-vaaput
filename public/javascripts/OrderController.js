@@ -1,7 +1,17 @@
-function lisaaTilaukseen(tuote) {
-    $.post("/tilaus", { tilattuTuote: tuote });
+// Deletes order from DB
+function deleteOrder(orderId) {
+  $.ajax({
+    url: '/tilaus',
+    type: 'DELETE',
+    data: { id: orderId },
+    success: function(result) {
+      // Refresh site
+      window.location.href = "/tilaukset";
+    }
+  });
 }
 
+// Angular controller
 (function(angular) {
   'use strict';
 angular.module('orderController', [])

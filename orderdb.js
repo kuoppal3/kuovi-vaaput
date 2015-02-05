@@ -60,11 +60,21 @@ Order.prototype.add = function(fn){
                                tilaus: that.tilaus 
                             });
 
+  console.log(order);
   order.save(function(err, order){
     if(err) { fn(err); }
     fn(null, order);
   });
 
+};
+
+Order.delete = function(orderId, fn) {
+  // Find and delete the order
+  orderModel.remove( { "_id": orderId }, function(err) {
+    if(err) { fn(err) }
+    // Callback
+    fn();
+  });
 };
 
 Order.deleteAll = function(fn){
@@ -79,9 +89,7 @@ Order.fetchAll = function(fn){
     if(err) { fn(err) }
     if(orders.length === 0) {
       fn();
-    }
-    else
-    {
+    } else {
       // Sort by timestamp
       orders.sort(function(a, b) { return b.aikaleima - a.aikaleima});
       fn(null, orders);

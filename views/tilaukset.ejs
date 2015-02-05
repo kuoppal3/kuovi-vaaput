@@ -10,8 +10,8 @@
       <div class="row">
         <ul class="list-group small_line_height">
             <% for(var i = 0; i < tilaukset.length; ++i) { %>
-                <li  class="list-group-item align_left">
-                  <span class="close">x</span>
+                <li class="list-group-item align_left">
+                  <span id="<%= tilaukset[i]._id %>" onclick="deleteOrder(this.id)" class="close">x</span>
                   <p><%= tilaukset[i].aikaleima %> </p> <br>
                   <p><%= tilaukset[i].etunimi + " " + tilaukset[i].sukunimi %> </p> <br>
                   <p><%= tilaukset[i].postinumero + " " + tilaukset[i].paikkakunta %> </p> <br>

@@ -53,6 +53,7 @@ db.once('open', function callback () {
 app.get('/', routes.index);
 app.get('/tilaus', tilaus.tilaus);
 app.post('/tilaus', tilaus.lisaaTilaus);
+app.delete('/tilaus', tilaus.poistaTilaus);
 app.get('/tilaukset', tilaus.tilaukset);
 app.get('/vaaput', vaaput.vaaput);
 app.get('/vaaput/50mm/varikartta', vaaput.varikartta50mm);

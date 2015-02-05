@@ -4,8 +4,16 @@ exports.tilaus = function(req, res){
     res.render("tilaus", {});
 };
 
+exports.poistaTilaus = function(req, res){
+    var orderId = req.body.id;
+    Order.delete(orderId, function(err) {
+        if(err) { throw err; }
+        res.status(200);
+        res.send('Deleted successfully');
+    });
+};
+
 exports.tilaukset = function(req, res){
-    //Order.deleteAll();
     Order.fetchAll(function(err, orders){
         if(err) throw err;
 
@@ -14,17 +22,14 @@ exports.tilaukset = function(req, res){
         } else {
             res.render("tilaukset", {tilaukset: orders});
         }
-
-        
     });
-
 };
 
 exports.lisaaTilaus = function(req, res){
     var order = req.body;
     console.log(order);
 
-    // Aikaleima
+    // Timestamp
     var aikaleima = new Date();
     
     var newOrder = new Order({

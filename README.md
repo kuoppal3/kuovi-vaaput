@@ -1,7 +1,8 @@
 ## Vaappusivusto tilauskorilla
 Vaappusivusto, jossa asiakas voi kerätä vaappuja tilauskoriin ja suorittaa tilauksen.
 Sivusto tallentaa selaimen localstorageen tilauksen ja lähettää tilauksen palvelimelle,
-mikäli asiakasselain niin haluaa.
+mikäli asiakasselain niin haluaa. Tilaukset voi myös tehdä raahaamalla ja pudottamalla 
+tuotteet tilauskoriin.
 
 Sivusto löytyy osoitteesta: http://kuovi-vaaput.azurewebsites.net/
 
