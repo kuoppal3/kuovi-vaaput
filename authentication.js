@@ -1,7 +1,9 @@
+// Authentication for admin to control orders
+
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
-// Lomakekirjautuminen
+// Login
 exports.passportUseLocal = passport.use(new LocalStrategy(
   {
     // Name-field from HTML
@@ -11,4 +13,5 @@ exports.passportUseLocal = passport.use(new LocalStrategy(
   function(username, password, done) {
      
   }
+
 ));

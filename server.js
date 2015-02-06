@@ -12,6 +12,9 @@ var routes = require('./routes')
   , vaaput = require('./routes/vaaput')
   , kuvia = require('./routes/kuvia');
 
+var passport = require('passport')
+var authentication = require('./authentication');
+
 var app = express();
 
 app.set('port', process.env.PORT);
@@ -26,6 +29,9 @@ app.use(express.cookieParser('secret'));
 app.use(express.session({secret: 'secrettoken'}));
 app.use(express.bodyParser());
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -39,10 +45,10 @@ app.use(function(req, res) {
 var mongoose = require("mongoose");
 
 // Cloud9 local db
-//mongoose.connect('mongodb://' + process.env.IP + '/data');
+mongoose.connect('mongodb://' + process.env.IP + '/data');
 
 // Azure mongolab db
-mongoose.connect(process.env.CUSTOMCONNSTR_MONGOLAB_URI + '/data');
+//mongoose.connect(process.env.CUSTOMCONNSTR_MONGOLAB_URI + '/data');
 
 var db = mongoose.connection;
 db.once('open', function callback () {

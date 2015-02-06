@@ -1,0 +1,24 @@
+<% include header %>
+<% include navbar %>
+
+<div class="container">
+  <div class="col-md-8 bg-own shadow">
+    <div class="panel-heading text-center">
+      <h2>Kirjaudu sisään hallitaksesi tilauksia</h2>
+      <form class="form-horizontal" action="/login" method="post">
+          <div class="form-group">
+            <label class="control-label col-xs-2">Kirjaudu</label>
+            <div class="col-xs-5">
+              <input type="etunimi" class="form-control" id="inputTunnus" name="tunnus" required placeholder="Tunnus">
+            </div>
+            
+            <div class="col-xs-5">
+              <input type="password" class="form-control" id="inputSalasana" name="salasana" required placeholder="Salasana">
+            </div>
+
+        <input type="submit" value="Kirjaudu"/>
+      </form>
+    </div>
+    
+  <%= include sidebar %>
+</div>
