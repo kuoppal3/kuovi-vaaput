@@ -13,7 +13,7 @@ var routes = require('./routes')
   , kuvia = require('./routes/kuvia');
 
 var passport = require('passport')
-var authentication = require('./authentication');
+var authentication = require('.users/authentication');
 
 var app = express();
 
@@ -60,9 +60,11 @@ app.get('/', routes.index);
 app.get('/tilaus', tilaus.tilaus);
 app.post('/tilaus', tilaus.lisaaTilaus);
 app.delete('/tilaus', tilaus.poistaTilaus);
+
 // Login needed to access orders
 app.get('/tilaukset', tilaus.loginForm);
 app.post('/kirjaudu', tilaus.loginTilaukset);
+
 app.get('/vaaput', vaaput.vaaput);
 app.get('/vaaput/50mm/varikartta', vaaput.varikartta50mm);
 app.get('/vaaput/120mm/3d', vaaput.vaappu3d);
