@@ -5,19 +5,24 @@
   <div class="col-md-8 bg-own shadow">
     <div class="panel-heading text-center">
       <h2>Kirjaudu sisään hallitaksesi tilauksia</h2>
-      <form class="form-horizontal" action="/login" method="post">
-          <div class="form-group">
-            <label class="control-label col-xs-2">Kirjaudu</label>
-            <div class="col-xs-5">
+      <form class="form-horizontal" action="/kirjaudu" method="post">
+        <div class="form-group">
+            <div class="col-xs-6">
               <input type="etunimi" class="form-control" id="inputTunnus" name="tunnus" required placeholder="Tunnus">
             </div>
             
-            <div class="col-xs-5">
+            <div class="col-xs-6">
               <input type="password" class="form-control" id="inputSalasana" name="salasana" required placeholder="Salasana">
             </div>
-
-        <input type="submit" value="Kirjaudu"/>
+        </div>
+        
+        <div class="form-group">    
+            <div class="col-xs-12">
+                <input class="btn btn-default" type="submit" value="Kirjaudu sisään"/>
+            </div>
+        </div>
       </form>
+    </div>
     </div>
     
   <%= include sidebar %>

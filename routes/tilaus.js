@@ -1,7 +1,7 @@
 var Order = require('.././orderdb');
 
 exports.tilaus = function(req, res){
-    res.render("kirjautuminen", {});
+    res.render("tilaus", {});
 };
 
 exports.poistaTilaus = function(req, res){
@@ -11,6 +11,14 @@ exports.poistaTilaus = function(req, res){
         res.status(200);
         res.send('Deleted successfully');
     });
+};
+
+exports.loginForm = function(req, res) {
+  res.render("kirjautuminen");  
+};
+
+exports.loginTilaukset = function(req, res) {
+    
 };
 
 exports.tilaukset = function(req, res){
