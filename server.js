@@ -15,6 +15,7 @@ var routes = require('./routes')
 var passport = require('passport');
 var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
 var authentication = require('./users/authentication');
+
 authentication.passportUseLocal;
 authentication.passportSerializeUser;
 authentication.passportDeserializeUser;
