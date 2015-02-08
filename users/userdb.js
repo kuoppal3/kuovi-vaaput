@@ -20,14 +20,11 @@ function User(obj) {
 User.prototype.add = function(fn){
     var that = this;
     var salt = crypto.randomBytes(128).toString('base64');
-    console.log(salt);
     
+    // Hash and salt password and save it to db
     crypto.pbkdf2(that.password, salt, 64000, 512, function(err, derivedKey) {
-        console.log(derivedKey.toString('base64'));
+        if(err) throw err;
         var saltedPassword = salt + derivedKey.toString('base64');
-        console.log("tää tallennetaan");
-        
-        console.log(saltedPassword);
         
         var user = new userModel({ user: that.user,
                                    password: saltedPassword
@@ -37,7 +34,7 @@ User.prototype.add = function(fn){
             if(err) { fn(err); }
             fn(null, user);
         });
-        //var salt2 = saltedPassword.substring(0, 172);
+
     });
 
 };
