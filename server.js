@@ -12,8 +12,12 @@ var routes = require('./routes')
   , vaaput = require('./routes/vaaput')
   , kuvia = require('./routes/kuvia');
 
-var passport = require('passport')
-var authentication = require('.users/authentication');
+var passport = require('passport');
+var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
+var authentication = require('./users/authentication');
+authentication.passportUseLocal;
+authentication.passportSerializeUser;
+authentication.passportDeserializeUser;
 
 var app = express();
 
@@ -62,8 +66,11 @@ app.post('/tilaus', tilaus.lisaaTilaus);
 app.delete('/tilaus', tilaus.poistaTilaus);
 
 // Login needed to access orders
-app.get('/tilaukset', tilaus.loginForm);
-app.post('/kirjaudu', tilaus.loginTilaukset);
+app.get('/login', tilaus.loginForm);
+app.post('/login', passport.authenticate('local',
+         {successRedirect: '/tilaukset', failureRedirect: '/login'}));
+app.get('/logout', authentication.logout);
+app.get('/tilaukset', ensureLoggedIn('/login'), tilaus.tilaukset);
 
 app.get('/vaaput', vaaput.vaaput);
 app.get('/vaaput/50mm/varikartta', vaaput.varikartta50mm);

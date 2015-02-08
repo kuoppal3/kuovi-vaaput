@@ -17,11 +17,8 @@ exports.loginForm = function(req, res) {
   res.render("kirjautuminen");  
 };
 
-exports.loginTilaukset = function(req, res) {
-    
-};
-
 exports.tilaukset = function(req, res){
+
     Order.fetchAll(function(err, orders){
         if(err) throw err;
 
